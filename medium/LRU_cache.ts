@@ -7,8 +7,8 @@ class LRUCache {
 	}
 
 	get(key: number): number {
-		if (this.#cache.has(key)) {
-			const value = this.#cache.get(key);
+		const value = this.#cache.get(key);
+		if (value != undefined) {
 			this.#updateCacheTimeline(key, value!);
 			return value!;
 		}
@@ -45,4 +45,4 @@ class LRUCache {
  * obj.put(key,value)
  */
 
-//**   115 ms / 108 mb */
+//**   96 ms / 108 mb */
